@@ -4,54 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0118cdcc-920b-4f0a-b608-3c7d1d6c4403" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/api-gateway/src/main/java/by/beltam/practice/security/JwtUtil.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/auth-service/src/main/java/by/beltam/practice/controller/AuthController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/booking-service/src/main/java/by/beltam/practice/BookingServiceApplication.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/booking-service/src/main/java/by/beltam/practice/config/HeaderAuthenticationFilter.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/booking-service/src/main/java/by/beltam/practice/controller/BookingController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/booking-service/src/main/java/by/beltam/practice/exception/AccessDeniedException.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/booking-service/src/main/java/by/beltam/practice/utility/BookingStatus.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/booking-service/src/main/resources/application.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/buildSrc/build.gradle" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/buildSrc/src/main/groovy/spring-conventions.gradle" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/catalog-service/src/main/java/by/beltam/practice/controller/CatalogController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/catalog-service/src/main/java/by/beltam/practice/dto/amenity/AmenityCreateRequest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/catalog-service/src/main/java/by/beltam/practice/dto/amenity/AmenityUpdateRequest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/catalog-service/src/main/java/by/beltam/practice/dto/hotel/HotelCreateRequest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/catalog-service/src/main/java/by/beltam/practice/dto/hotel/HotelSearchCriteria.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/catalog-service/src/main/java/by/beltam/practice/dto/hotel/HotelUpdateRequest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/catalog-service/src/main/java/by/beltam/practice/dto/room_type/RoomTypeCreateRequest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/catalog-service/src/main/java/by/beltam/practice/dto/room_type/RoomTypeSearchCriteria.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/catalog-service/src/main/java/by/beltam/practice/dto/room_type/RoomTypeUpdateRequest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/catalog-service/src/main/java/by/beltam/practice/mapper/CatalogMapper.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/catalog-service/src/main/java/by/beltam/practice/repository/AmenityRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/catalog-service/src/main/java/by/beltam/practice/repository/HotelRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/catalog-service/src/main/java/by/beltam/practice/service/CatalogService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/catalog-service/src/main/java/by/beltam/practice/specification/HotelSpecification.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/catalog-service/src/main/java/by/beltam/practice/specification/RoomTypeSpecification.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/catalog-service/src/main/java/by/beltam/practice/utility/SortUtils.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/catalog-service/src/main/resources/application.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/catalog-service/src/test/java/by/beltam/practice/service/CatalogServiceTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/common-exception/src/main/java/by/beltam/practice/common/exception/BaseBusinessException.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/config_server/src/main/resources/config/api-gateway.yaml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/config_server/src/main/resources/config/catalog-service.yaml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/config_server/src/main/resources/config/eureka-server.yaml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docker-compose.yml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/gradle/wrapper/gradle-wrapper.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/gradle/wrapper/gradle-wrapper.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/gradlew" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/gradlew.bat" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/settings.gradle" afterDir="false" />
-    </list>
+    <list default="true" id="0118cdcc-920b-4f0a-b608-3c7d1d6c4403" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -359,7 +312,7 @@
       <workItem from="1773671883832" duration="635000" />
       <workItem from="1773672981753" duration="1181000" />
       <workItem from="1773754317788" duration="4661000" />
-      <workItem from="1773759388141" duration="8196000" />
+      <workItem from="1773759388141" duration="8521000" />
     </task>
     <servers />
   </component>
