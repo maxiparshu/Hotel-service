@@ -1,0 +1,12 @@
+rootProject.name = 'hotel-booking-platform'
+
+include 'config_server'
+include 'eureka-server'
+include 'api-gateway'
+include 'catalog-service'
+include 'booking-service'
+include 'auth-service'
+include 'common-exception'
+include 'common-dto'
+include 'payment-service'
+

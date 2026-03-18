@@ -1,0 +1,14 @@
+plugins {
+    id 'java-library'
+}
+repositories {
+    mavenCentral()
+}
+dependencies {
+    implementation platform("org.springframework.boot:spring-boot-dependencies:3.2.5")
+
+    api 'org.springframework:spring-web'
+    api 'org.springframework:spring-context'
+    api 'jakarta.servlet:jakarta.servlet-api'
+    api 'jakarta.validation:jakarta.validation-api'
+}

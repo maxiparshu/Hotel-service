@@ -1,0 +1,53 @@
+server:
+  port: 8084
+
+jwt:
+  # Убедись, что этот секрет в точности совпадает с секретом в Auth-Service!
+  secret: aBIqDF1cF1j7tzhg36eMYUMg4lUdv6SHo0KctqCemXI
+  expire-time: 86400000
+
+spring:
+  application:
+    name: api-gateway
+  cloud:
+    gateway:
+      discovery:
+        locator:
+          enabled: true
+          lower-case-service-id: true
+
+      routes:
+        - id: auth-service-api
+          uri: lb://auth-service
+          predicates:
+            - Path=/api/v1/auth/**
+
+        - id: catalog-service-public
+          uri: lb://catalog-service
+          predicates:
+            - Path=/api/v1/catalog/**
+            - Method=GET
+
+        - id: catalog-service-protected
+          uri: lb://catalog-service
+          predicates:
+            - Path=/api/v1/catalog/**
+            - Method=POST,PUT,PATCH,DELETE
+          filters:
+            - AuthenticationFilter
+
+        - id: booking-service-api
+          uri: lb://booking-service
+          predicates:
+            - Path=/api/v1/booking/**
+          filters:
+            - AuthenticationFilter
+
+        - id: catalog-h2
+          uri: lb://catalog-service
+          predicates:
+            - Path=/h2-catalog-console/**
+        - id: booking-h2
+          uri: lb://booking-service
+          predicates:
+            - Path=/h2-booking-console/**

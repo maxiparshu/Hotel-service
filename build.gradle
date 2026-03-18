@@ -1,0 +1,8 @@
+plugins {
+    id 'java'
+}
+
+allprojects {
+    group = 'by.beltam.practice'
+    version = '1.0.0'
+}
