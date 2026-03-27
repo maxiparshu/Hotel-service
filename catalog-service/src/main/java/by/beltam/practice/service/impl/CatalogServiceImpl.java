@@ -29,6 +29,7 @@ import java.util.UUID;
 
 @Service
 @RequiredArgsConstructor
+@Transactional(readOnly = true)
 public class CatalogServiceImpl implements CatalogService {
     private final RoomTypeRepository roomTypeRepository;
     private final HotelRepository hotelRepository;
@@ -46,6 +47,7 @@ public class CatalogServiceImpl implements CatalogService {
 
     // create
     @Override
+    @Transactional
     public Hotel createHotel(Hotel hotel) {
         if (hotelRepository.existsHotelByAddressAndCity(hotel.getAddress(), hotel.getCity()))
             throw new ConflictException("hotel at this city and address already exist");
@@ -57,6 +59,7 @@ public class CatalogServiceImpl implements CatalogService {
 
 
     @Override
+    @Transactional
     public Amenity createAmenity(Amenity amenity) {
         if (amenityRepository.existsAllByNameAndCategory(amenity.getName(), amenity.getCategory())) {
             throw new ConflictException("amenity with this name and category already exist");
@@ -65,6 +68,7 @@ public class CatalogServiceImpl implements CatalogService {
     }
 
     @Override
+    @Transactional
     public RoomType createRoomType(RoomType roomType, UUID hotelId) {
         Hotel hotel = hotelRepository.findById(hotelId)
                 .orElseThrow(() -> new NotFoundException("hotel with this id"));
@@ -90,7 +94,6 @@ public class CatalogServiceImpl implements CatalogService {
     }
 
     @Override
-    @Transactional
     public RoomType getRoomType(UUID id) {
         return roomTypeRepository.findById(id).orElseThrow(
                 () -> new NotFoundException("room with this id")
@@ -98,7 +101,6 @@ public class CatalogServiceImpl implements CatalogService {
     }
 
     @Override
-    @Transactional
     public List<RoomType> filterRoomTypes(RoomTypeSearchCriteria criteria) {
         Specification<RoomType> spec = RoomTypeSpecification.fromCriteria(criteria);
         Sort sort = SortUtils.getSortFrom(
@@ -109,7 +111,6 @@ public class CatalogServiceImpl implements CatalogService {
     }
 
     @Override
-    @Transactional
     public List<Hotel> filterHotels(HotelSearchCriteria criteria) {
         Specification<Hotel> filterSpecification = HotelSpecification.fromCriteria(criteria);
         Sort sort = SortUtils.getSortFrom(
@@ -126,6 +127,7 @@ public class CatalogServiceImpl implements CatalogService {
 
     //update
     @Override
+    @Transactional
     public Hotel updateHotel(UUID hotelId, HotelUpdateRequest hotelUpdateRequest) {
         Hotel hotel = hotelRepository.findById(hotelId)
                 .orElseThrow(() -> new NotFoundException("hotel with this id"));
@@ -149,6 +151,7 @@ public class CatalogServiceImpl implements CatalogService {
     }
 
     @Override
+    @Transactional
     public RoomType updateRoomType(UUID roomId, RoomTypeUpdateRequest roomTypeUpdateRequest) {
         RoomType roomType = roomTypeRepository.findById(roomId)
                 .orElseThrow(() -> new NotFoundException("room with this id"));
@@ -197,6 +200,7 @@ public class CatalogServiceImpl implements CatalogService {
     }
 
     @Override
+    @Transactional
     public Amenity updateAmenity(UUID amenityId, AmenityUpdateRequest amenityUpdateRequest) {
         Amenity amenity = amenityRepository.findById(amenityId)
                 .orElseThrow(() -> new NotFoundException("amenity with this id"));
@@ -231,6 +235,7 @@ public class CatalogServiceImpl implements CatalogService {
     }
 
     @Override
+    @Transactional
     public void deleteHotel(UUID hotelId) {
         Hotel hotel = hotelRepository.findById(hotelId)
                 .orElseThrow(() -> new NotFoundException("hotel with this id"));

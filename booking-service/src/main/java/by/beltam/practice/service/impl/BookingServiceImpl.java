@@ -31,6 +31,7 @@ import java.util.UUID;
 @Service
 @Slf4j
 @RequiredArgsConstructor
+@Transactional(readOnly = true)
 public class BookingServiceImpl implements BookingService {
 
     private final BookingRepository bookingRepository;
@@ -114,7 +115,6 @@ public class BookingServiceImpl implements BookingService {
     }
 
     @Override
-    @Transactional(readOnly = true)
     public List<Booking> searchBookings(UUID roomTypeId, BookingStatus status, LocalDate from, LocalDate to) {
         return bookingRepository.findAll().stream()
                 .filter(b -> roomTypeId == null || b.getRoomTypeId().equals(roomTypeId))
@@ -125,13 +125,11 @@ public class BookingServiceImpl implements BookingService {
     }
 
     @Override
-    @Transactional(readOnly = true)
     public List<Booking> getUserBookings(UUID userId) {
         return bookingRepository.findAllByUserIdOrderByCreatedAtDesc(userId);
     }
 
     @Override
-    @Transactional(readOnly = true)
     public Booking getBookingById(UUID bookingId) {
         return bookingRepository.findById(bookingId)
                 .orElseThrow(() -> new NotFoundException("Booking"));
